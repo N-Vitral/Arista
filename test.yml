@@ -1,4 +1,13 @@
-- eos_command:
-    commands: 'show version'
-    transport: eapi
-    use_ssl: true
+# Collect all facts from the device
+- eos_facts:
+    gather_subset: all
+
+# Collect only the config and default facts
+- eos_facts:
+    gather_subset:
+      - config
+
+# Do not collect hardware facts
+- eos_facts:
+    gather_subset:
+      - "!hardware"
