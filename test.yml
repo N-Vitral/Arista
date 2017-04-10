@@ -1,11 +1,4 @@
-- name: Gather info from Show Version
-hosts: all
-
-
-  tasks:
- 
- - name: Gather info from Show Version
- eos_command:
+- eos_command:
     commands: 'show version'
     transport: eapi
     use_ssl: true
